@@ -10,7 +10,7 @@ const Header = () => {
       <Search />
       <div className="header-wrapper">
         <FileUploader />
-        <form action="">
+        <form>
           <Button type="submit" className=" sign-out-button">
             <Image
               src="/assets/icons/logout.svg"
