@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-dark-100 text-white min-h-screen;
+    @apply bg-dark-200 text-white min-h-screen;
   }
 
   .custom-scrollbar::-webkit-scrollbar {
@@ -56,6 +56,24 @@
   }
   :root {
     --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -171,7 +189,7 @@
 
   /* Root Layout */
   .main-content {
-    @apply remove-scrollbar h-full flex-1 overflow-auto bg-light-400 px-5 py-7 sm:mr-7 sm:rounded-[30px] md:mb-7 md:px-9 md:py-10 !important;
+    @apply remove-scrollbar h-full flex-1 overflow-auto bg-dark-100 px-5 py-7 sm:mr-7 sm:rounded-[30px] md:mb-7 md:px-9 md:py-10 !important;
   }
 
   /* Dashboard */
@@ -394,7 +412,7 @@
     @apply flex text-light-100 gap-4 rounded-xl lg:w-full justify-center lg:justify-start items-center h5 lg:px-[30px] h-[52px] lg:rounded-full !important;
   }
   .sidebar-user-info {
-    @apply mt-4 flex items-center justify-center gap-2 rounded-full bg-brand/10 p-1 text-light-100 lg:justify-start lg:p-3 !important;
+    @apply mt-4 flex items-center justify-center gap-2 rounded-full bg-brand/10 p-1 text-gray-200 lg:justify-start lg:p-3 !important;
   }
   .sidebar-user-avatar {
     @apply aspect-square w-10 rounded-full object-cover !important;
