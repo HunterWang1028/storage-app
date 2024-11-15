@@ -43,6 +43,7 @@ export const ShareInput = ({
   file,
   onInputChange,
   onRemove,
+  currentUserId,
 }: ShareInputProps) => {
   return (
     <>
@@ -71,18 +72,20 @@ export const ShareInput = ({
                 className=" flex items-center justify-between gap-2"
               >
                 <p className="subtitle-2">{email}</p>
-                <Button
-                  onClick={() => onRemove(email)}
-                  className="share-remove-user"
-                >
-                  <Image
-                    src="/assets/icons/remove.svg"
-                    alt="Romove"
-                    width={24}
-                    height={24}
-                    className="remove-item"
-                  />
-                </Button>
+                {currentUserId === file.owner && (
+                  <Button
+                    onClick={() => onRemove(email)}
+                    className="share-remove-user"
+                  >
+                    <Image
+                      src="/assets/icons/remove.svg"
+                      alt="Romove"
+                      width={24}
+                      height={24}
+                      className="remove-item"
+                    />
+                  </Button>
+                )}
               </li>;
             })}
           </ul>
