@@ -52,7 +52,7 @@ declare interface FileUploaderProps {
 }
 
 declare interface MobileNavigationProps {
-  ownerId: string;
+  $id: string;
   accountId: string;
   fullName: string;
   avatar: string;
