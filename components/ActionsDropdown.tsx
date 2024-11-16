@@ -29,7 +29,6 @@ import {
 } from "@/lib/actions/file.actions";
 import { usePathname } from "next/navigation";
 import { FileDetails, ShareInput } from "./ActionsModalContent";
-import { getCurrentUser } from "@/lib/actions/user.actions";
 
 const ActionsDropdown = ({
   file,
@@ -153,7 +152,7 @@ const ActionsDropdown = ({
             height={34}
           />
         </DropdownMenuTrigger>
-        <DropdownMenuContent className="bg-dark-100 text-gray-200 p-2 ">
+        <DropdownMenuContent className="bg-dark-100 p-2 text-gray-200 ">
           <DropdownMenuLabel className="min-w-[200px] truncate">
             {file.name}
           </DropdownMenuLabel>
