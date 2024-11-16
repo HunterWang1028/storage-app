@@ -2,8 +2,6 @@
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
@@ -30,13 +28,18 @@ const MobileNavigation = ({
   const pathname = usePathname();
   return (
     <header className="mobile-header">
-      <Image
-        src="/assets/icons/logo-full-brand.svg"
-        alt="logo"
-        width={120}
-        height={52}
-        className=" h-auto"
-      />
+      <div className="flex">
+        <Image
+          src="/assets/icons/logo-brand.svg"
+          alt="logo"
+          width={45}
+          height={39}
+          className="h-auto"
+        />
+        <p className="h3 ml-3 flex items-center justify-center text-brand">
+          Storage
+        </p>
+      </div>
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger>
           <Image
@@ -46,7 +49,7 @@ const MobileNavigation = ({
             height={30}
           />
         </SheetTrigger>
-        <SheetContent className="shad-sheet h-screen px-3 bg-dark-200">
+        <SheetContent className="shad-sheet h-screen bg-dark-200 px-3">
           <SheetTitle>
             <div className="header-user">
               <Image

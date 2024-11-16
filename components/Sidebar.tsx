@@ -10,15 +10,20 @@ import React from "react";
 const Sidebar = ({ fullName, avatar, email }: SidebarProps) => {
   const pathname = usePathname();
   return (
-    <aside className="sidebar">
+    <aside className="sidebar ">
       <Link href="/">
-        <Image
-          src="/assets/icons/logo-full-brand.svg"
-          alt="logo"
-          width={160}
-          height={50}
-          className=" hidden h-auto lg:block"
-        />
+        <div className="flex flex-1">
+          <Image
+            src="/assets/icons/logo-brand.svg"
+            alt="logo"
+            width={60}
+            height={25}
+            className=" hidden h-auto lg:block"
+          />
+          <p className="h2 hidden items-center justify-center pl-3 text-brand lg:flex">
+            Storage
+          </p>
+        </div>
         <Image
           src="/assets/icons/logo-brand.svg"
           alt="logo"
