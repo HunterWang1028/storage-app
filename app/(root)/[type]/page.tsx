@@ -2,15 +2,20 @@ import Card from "@/components/Card";
 import Sort from "@/components/Sort";
 import { getFiles } from "@/lib/actions/file.actions";
 import { getCurrentUser } from "@/lib/actions/user.actions";
-import { SearchParamProps } from "@/types";
+import { getFileTypesParams } from "@/lib/utils";
+import { FileType, SearchParamProps } from "@/types";
 import { Models } from "node-appwrite";
 import React from "react";
 
-const Page = async ({ params }: SearchParamProps) => {
+const Page = async ({ params, searchParams }: SearchParamProps) => {
   const type = ((await params)?.type as string) || "";
+  const searchText = ((await searchParams)?.query as string) || "";
+  const sort = ((await searchParams)?.sort as string) || "";
 
-  const files = await getFiles();
-  3;
+  const types = getFileTypesParams(type) as FileType[];
+
+  const files = await getFiles({ types, searchText, sort });
+
   const currentUser = await getCurrentUser();
 
   return (
@@ -23,7 +28,7 @@ const Page = async ({ params }: SearchParamProps) => {
             Total: <span className="h5">0 MB</span>
           </p>
           <div className="sort-container">
-            <p className="body-1 hidden sm:block text-gray-200">Sort by:</p>
+            <p className="body-1 hidden text-gray-200 sm:block">Sort by:</p>
             <Sort />
           </div>
         </div>
